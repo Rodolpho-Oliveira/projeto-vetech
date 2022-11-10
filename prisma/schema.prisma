@@ -43,6 +43,7 @@ model Consults {
 model Doctors {
   id        Int      @default(autoincrement()) @id
   name      String
+  email     String   @unique
   specialization String
   consults  Consults[]
 }
