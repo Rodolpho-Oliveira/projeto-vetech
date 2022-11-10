@@ -9,3 +9,40 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Users {
+  id        Int      @default(autoincrement()) @id
+  email     String   @unique
+  name      String
+  password  String
+  animals   Animals[]
+}
+
+model Animals {
+  id        Int      @default(autoincrement()) @id
+  name      String
+  specie    String
+  breed     String
+  age       Int
+  vaccinated Boolean
+  owner     Users    @relation(fields: [ownerId], references: [id])
+  ownerId   Int
+  consult  Consults[]
+}
+
+model Consults {
+  id        Int      @default(autoincrement()) @id
+  date      DateTime
+  animal    Animals  @relation(fields: [animalId], references: [id])
+  animalId  Int
+  doctor    Doctors    @relation(fields: [doctorId], references: [id])
+  doctorId  Int
+  notes     String?
+}
+
+model Doctors {
+  id        Int      @default(autoincrement()) @id
+  name      String
+  specialization String
+  consults  Consults[]
+}
