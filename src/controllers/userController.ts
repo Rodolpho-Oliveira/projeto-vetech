@@ -1,6 +1,6 @@
-import { Users } from "@prisma/client";
-import { Request, Response } from "express";
-import { signUpService, singInService } from "../services/userService.js";
+import { Users } from "@prisma/client"
+import { Request, Response } from "express"
+import { signUpService, singInService } from "../services/userService.js"
 
 export type CreateUserData = Omit<Users, "id">
 

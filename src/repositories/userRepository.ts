@@ -1,5 +1,5 @@
-import { db } from "../app/database.js";
-import { CreateUserData } from "../controllers/userController.js";
+import { db } from "../app/database.js"
+import { CreateUserData } from "../controllers/userController.js"
 
 export async function checkUserEmail(email: string) {
     return await db.users.findUnique({

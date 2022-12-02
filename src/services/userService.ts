@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-import { checkUserEmail, createNewUser } from "../repositories/userRepository.js";
-import { CreateUserData } from "../controllers/userController.js";
+import { checkUserEmail, createNewUser } from "../repositories/userRepository.js"
+import { CreateUserData } from "../controllers/userController.js"
 
 export async function signUpService({email, password, name}: CreateUserData) {
     const check = await checkUserEmail(email)

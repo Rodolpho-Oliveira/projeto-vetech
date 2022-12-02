@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express"
 import jwt from "jsonwebtoken"
-import Joi from "joi";
-import { checkUserEmail } from "../repositories/userRepository.js";
+import Joi from "joi"
+import { checkUserEmail } from "../repositories/userRepository.js"
 
 export async function signUpValidation(req: Request, res: Response, next: NextFunction) {
     const signUpValidation = Joi.object({
