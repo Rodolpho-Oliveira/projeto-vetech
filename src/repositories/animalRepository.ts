@@ -1,9 +1,9 @@
 import { db } from "../app/database.js"
 import { CreateAnimalData } from "../controllers/animalController.js"
 
-export async function registerNewAnimal(animalData: CreateAnimalData) {
+export async function registerNewAnimal(animalData: CreateAnimalData, userId: number) {
     return await db.animals.create(
-        {data: animalData}
+        {data: {...animalData, ownerId: userId}}
     )
 }
 

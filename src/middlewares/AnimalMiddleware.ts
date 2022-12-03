@@ -6,8 +6,8 @@ export async function animalValidation(req: Request, res: Response, next: NextFu
         name: Joi.string().required(),
         age: Joi.number().required(),
         breed: Joi.string().required(),
-        weight: Joi.number().required(),
-        type: Joi.string().required
+        specie: Joi.string().required(),
+        vaccinated: Joi.boolean().required()
     })
     const validation = animalValidation.validate(req.body)
     if(validation.error){
