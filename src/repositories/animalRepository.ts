@@ -15,3 +15,12 @@ export async function findAnimalByName(name: string, ownerId: number) {
         }
     })
 }
+
+export async function findUserAnimals(userId: number, name?: string) {
+    return await db.animals.findMany({
+        where: {
+            name: {startsWith: name},
+            ownerId: userId
+        }
+    })
+}
