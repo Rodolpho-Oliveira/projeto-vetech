@@ -24,3 +24,12 @@ export async function findUserAnimals(userId: number, name?: string) {
         }
     })
 }
+
+export async function findAnimalById(id: number, userId: number) {
+    return await db.animals.findFirst({
+        where: {
+            id: id,
+            ownerId: userId
+        }
+    })
+}

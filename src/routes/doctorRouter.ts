@@ -4,6 +4,6 @@ import { checkDoctorInfo } from "../middlewares/doctorMiddleware.js"
 
 const doctorRouter = Router()
 
-doctorRouter.post('/doctor/create', checkDoctorInfo,registerNewDoctor)
+doctorRouter.post('/doctor/create', checkDoctorInfo, registerNewDoctor)
 
 export default doctorRouter

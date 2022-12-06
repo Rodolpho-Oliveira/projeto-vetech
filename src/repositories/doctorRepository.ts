@@ -17,3 +17,11 @@ export async function getDoctorByEmail(email: string) {
         }
     })
 }
+
+export async function getDoctorById(id: number) {
+    return await db.doctors.findUnique({
+        where: {
+            id
+        }
+    })
+}
