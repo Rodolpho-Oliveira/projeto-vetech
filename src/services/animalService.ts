@@ -1,5 +1,5 @@
 import { CreateAnimalData } from "../controllers/animalController.js"
-import { findAnimalByName, findUserAnimals, registerNewAnimal } from "../repositories/animalRepository.js"
+import { changeAnimalData, findAnimalByName, findUserAnimals, registerNewAnimal } from "../repositories/animalRepository.js"
 
 export async function checkNewAnimalInfo(createAnimalData: CreateAnimalData, userId: number) {
     const animal = await findAnimalByName(createAnimalData.name, userId)
@@ -15,4 +15,12 @@ export async function getUserAnimals(userId: number, name?: string) {
         throw {type: "Pet not found", status: 404}
     }
     return animals
+}
+
+export async function updateUserAnimal(createAnimalData: CreateAnimalData, userId: number) {
+    const animal = await findAnimalByName(createAnimalData.name, userId)
+    if(!animal){
+        throw {type: "Pet not found", status: 404}
+    }
+    await changeAnimalData(animal.id, createAnimalData)
 }

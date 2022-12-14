@@ -33,3 +33,12 @@ export async function findAnimalById(id: number, userId: number) {
         }
     })
 }
+
+export async function changeAnimalData(animalId: number, animalData: CreateAnimalData) {
+    return await db.animals.update({
+        where: {
+            id: animalId
+        },
+        data: animalData
+    })
+}
