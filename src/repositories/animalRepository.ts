@@ -42,3 +42,12 @@ export async function changeAnimalData(animalId: number, animalData: CreateAnima
         data: animalData
     })
 }
+
+export async function deleteAnimal(animalId: number) {
+    console.log(animalId)
+    return await db.animals.delete({
+        where: {
+            id: animalId
+        }
+    })
+}

@@ -14,3 +14,11 @@ export async function findUserConsults(userId: number) {
         }
     })
 }
+
+export async function removeConsultsByAnimalId(animalId: number) {
+    return await db.consults.deleteMany({
+        where: {
+            animalId: animalId
+        }
+    })
+}

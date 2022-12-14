@@ -1,6 +1,6 @@
 import {Request, Response} from "express"
 import { Animals } from "@prisma/client"
-import { checkNewAnimalInfo, getUserAnimals, updateUserAnimal } from "../services/animalService.js"
+import { checkNewAnimalInfo, getUserAnimals, removeUserAnimal, updateUserAnimal } from "../services/animalService.js"
 
 export type CreateAnimalData = Omit<Animals, "id" | "ownerId">
 
@@ -23,4 +23,11 @@ export async function updateAnimal(req: Request, res: Response) {
     await updateUserAnimal({name, age, breed, vaccinated, specie}, res.locals.user)
 
     res.status(200).send("Status updated")
+}
+
+export async function removeAnimal(req: Request, res: Response) {
+    const {id}: {id: number} = req.body
+    await removeUserAnimal(res.locals.user, id)
+
+    res.status(200).send("Animal removed")
 }
