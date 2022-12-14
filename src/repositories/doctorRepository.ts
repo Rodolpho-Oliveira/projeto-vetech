@@ -25,3 +25,7 @@ export async function getDoctorById(id: number) {
         }
     })
 }
+
+export async function findAllDoctors() {
+    return await db.doctors.findMany()
+}
