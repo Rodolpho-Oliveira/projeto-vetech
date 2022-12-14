@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon ./src/app/server.ts",
     "dev:debug": "npx nodemon --inspect ./src/app/server.ts",
-    "prisma:migration": "npx prisma migrate dev --name init"
+    "prisma:migration": "npx prisma migrate dev --name init",
+    "dev:docker:up": "docker-compose -f docker-compose.yml --env-file .env up",
+    "dev:docker:donw": "docker-compose -f docker-compose.yml --env-file .env down"
   },
   "keywords": [],
   "author": "",
