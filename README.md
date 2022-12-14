@@ -1,7 +1,7 @@
 <div align="center">
 <h1>VeTech</h1>
 <p>
-<img src="https://toppng.com/uploads/preview/emojis-dog-115498371889fvynkylva.png" alt="Dog" width=200px/>
+<img src="https://storage.deliveryvip.com.br/7-uFb9ca-rTVclI0p-yGLYJd2je7eaUBeZwNBKsT4DA/h:256/Z3M6Ly9kZWxpdmVy/eXZpcC9ybjV4cnBm/czR5d2F6MHd3M3hx/cDQ5aGJlb2Rq" alt="Dog" width=200px/>
 </p>
 <br>
 <p > <b>The VeTech project is a veterinary manager API<b> </p>
