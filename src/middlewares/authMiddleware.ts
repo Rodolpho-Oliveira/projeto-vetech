@@ -11,7 +11,7 @@ export async function signUpValidation(req: Request, res: Response, next: NextFu
     })
     const validation = signUpValidation.validate(req.body)
     if(validation.error){
-        throw {type: "Wrong infomartion", status: 401}
+        throw {type: "Wrong infomartion", status: 400}
     }
 
     next()
